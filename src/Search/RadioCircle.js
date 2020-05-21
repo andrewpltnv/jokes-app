@@ -1,17 +1,17 @@
 import React from "react";
 
 function RadioCircle(props) {
-  const name = props.name;
-  const isActive = props.selected === name;
+  const {name,state,select,selected} = props;
+  const isActive = selected === state;
   const handleSelect = (event) =>{
-    props.select(name);
+    select(state);
     event.preventDefault();
   };
   return(
     <>
       <div className="option" onClick={handleSelect}>
         {isActive?circleOn():circleOff()}
-        <span className="option--text">{name}</span>
+        <h4 className="option--text">{name}</h4>
       </div>
       {(isActive) && props.children}
     </>

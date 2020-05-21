@@ -9,9 +9,9 @@ function RadioBox(props) {
   };
 
   return(
-    <div className={"box box--radio--" + isActive} onClick={handleSelect}>
+    <span className={"box box--radio--" + isActive} onClick={handleSelect}>
       <span className="box--text">{name}</span>
-    </div>
+    </span>
   );
 }
 

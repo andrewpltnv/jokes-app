@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    word-break: break-word;
 }
 .App{
     width: 100%;
@@ -9,39 +11,63 @@
     flex-direction: row;
     justify-content: space-between;
     color: #333333;
+    z-index: 111;
+}
+.App.opened{
+    -webkit-filter: blur(1px);
+    background-color: #ccc;
+}
+main{
+    height: 100vh;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    position: absolute;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto 0 auto;
+}
+#catalog{
+    z-index: 1;
+    max-width: 480px;
+    height: max-content;
+    position: absolute;
+    padding: 20px 20px 20px 20px;
+    top: 0;
+    right: 0;
+    background: #F8F8F8;
 }
 @media all and (min-width: 380px){
     main{
-        padding: 20px 20px 20px 20px;
+        padding: 20px;
+    }
+    .catalog{
+        padding: 20px;
     }
 }
 @media all and (min-width: 840px){
     main{
-        padding: 40px 40px 40px 40px;
+        padding: 40px;
     }
-    #favourite{
-        width: 480px;
+    #catalog{
+        padding: 40px;
     }
 }
-@media all and (min-width: 1340px){
+@media all and (min-width: 1240px){
     main{
-        padding: 40px 140px 40px 140px;
+        padding: 40px 40px 140px 40px;
     }
-}
-main{
-
+    #catalog{
+        padding: 40px;
+    }
 }
 .search--title{
-    margin: 40px 0 40px 0;
+    margin: 60px 0 40px 0;
 }
 .option{
     margin: 10px 0 10px 0;
     display: flex;
     flex-direction: row;
-}
-.option--text{
-    font-size: 18px;
-    padding-left: 15px;
+    width: fit-content;
+    cursor: pointer;
 }
 .circle{
     border-radius: 50%;
@@ -68,8 +94,8 @@ main{
     background-color: #eeeeee;
 }
 .categories{
-    display: flex;
-    flex-direction: row;
+    padding-bottom: 10px;
+    word-break: break-all;
 }
 .box{
     height: 28px;
@@ -77,7 +103,8 @@ main{
     box-sizing: border-box;
     border-radius: 6px;
     padding: 0 15px 6px 15px;
-    margin: 10px 10px 10px 0;
+    margin-right: 10px;
+    cursor: pointer;
 }
 .box--radio--true{
     background: #F8F8F8;
@@ -86,15 +113,80 @@ main{
 .box--radio--false{
     color: #ABABAB;
 }
-#favourite{
-    height: auto;
-    background: #F8F8F8;
+.input--area{
+    height: 42px;
+    max-width: 680px;
+    border: 2px solid #333333;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    margin: 10px 0 10px 0;
+}
+input{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+.search--button{
+    width: 152px;
+    height: 42px;
+    background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+    border: 0;
+    margin: 10px 0 20px 0;
+}
+.shadow--wrapper{
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.open--catalog.opened{
+    float: left;
+}
+.open--catalog{
+    float: right;
+    margin: 0 5px 5px 0;
+    position: relative;
+    cursor: pointer;
+}
+.jokes{
+    padding: 20px 0 20px 0;
+}
+.joke{
+    margin: 20px 0 20px 0;
 }
 .joke--medium{
     width: 680px;
-    height: 225px;
+    height: min-content;
     background: #F8F8F8;
     border-radius: 20px;
+    padding: 40px;
 }
-
+.joke--small{
+    width: 400px;
+    height: min-content;
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+.rate{
+    width: -moz-available;
+    height: 20px;
+    text-align-last: end;
+}
+.frame--wrapper{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+.frame{
+    width: 40px;
+    height: 40px;
+    margin: 0 20px auto 20px;
+}
 
