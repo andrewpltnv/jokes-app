@@ -85,3 +85,14 @@ input{
     margin-left: 3px;
     color: #8EA7FF;
 }
+.joke--text{
+    margin-bottom: 30px;
+}
+.date--text{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: #ABABAB;
+}

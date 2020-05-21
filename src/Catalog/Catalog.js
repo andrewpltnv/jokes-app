@@ -3,12 +3,10 @@ import Joke from "../Joke";
 
 function Catalog(props) {
   const [isOpen,setOpen] = useState(true);
-  const [data,setData] = useState([{}]);
+  const [data,setData] = useState(JSON.parse(window.localStorage.getItem("funniestJokes")));
   const toggle = () => setOpen(!isOpen);
   useEffect(()=>{
-    setData((props.new)
-      ?JSON.parse(window.localStorage.getItem("funniestJokes")).concat((props.new))
-      :JSON.parse(window.localStorage.getItem("funniestJokes")))
+    (props.new)&&setData(prevState => prevState.concat(props.new));
   },[props.new]);
 
   return(
@@ -24,7 +22,7 @@ function Catalog(props) {
           </h3>
           <div className="jokes">
             {data && data.map((item)=>{
-              return <Joke setData={setData} size="small" tmp={item}/>
+              return <Joke setData={setData} size="small" tmp={item} key={item.id}/>
             })}
           </div>
         </div>

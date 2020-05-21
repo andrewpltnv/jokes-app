@@ -27,12 +27,13 @@ main{
 }
 #catalog{
     z-index: 1;
-    max-width: 480px;
+    width: min-content;
     height: max-content;
     position: absolute;
     padding: 20px 20px 20px 20px;
     top: 0;
     right: 0;
+    bottom: 0;
     background: #F8F8F8;
 }
 @media all and (min-width: 380px){
@@ -185,8 +186,19 @@ input{
     padding-top: 10px;
 }
 .frame{
-    width: 40px;
-    height: 40px;
-    margin: 0 20px auto 20px;
+    min-width: 40px;
+    min-height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #F8F8F8;
+    margin: 0 20px auto 10px;
+    padding: 10px 0 0 10px;
+}
+.frame--icon{
+}
+.joke--tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 

@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import like from "./like.svg";
-import dislike from "./dislike.svg"
+import dislike from "./dislike.svg";
+import message from "./message.svg";
 
 function Joke(props) {
   const data = props.tmp;
@@ -36,11 +37,19 @@ function Joke(props) {
       </div>
       <div className="frame--wrapper">
         <div className="frame">
-          Aaa
+          <img src={message} alt="mes" className="frame--icon"/>
         </div>
         <div className="data">
           <p className="joke--id">ID:<a href={data.url}>{data.id}</a></p>
-          <h4 className="">{data.value}</h4>
+          <h4 className="joke--text">{data.value}</h4>
+          <p className="joke--tags">
+            <span className="date--text">
+              Last update:{data.updated_at.toString().slice(0,10)}
+            </span>
+            {(data.categories!==[])
+              ?<span className="box--text">{data.categories[0]}</span>
+              :<></>}
+          </p>
         </div>
       </div>
     </div>

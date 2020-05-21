@@ -17,10 +17,12 @@ function App() {
   return (
     <div className="App">
       <main id="main" className="section">
-        <h3 id="unknownLabel">
-          MSI 2020
-          <Catalog new={isInvited}/>
-        </h3>
+        <header id="unknownLabel">
+          <h3>
+            MSI 2020
+            <Catalog new={isInvited}/>
+          </h3>
+        </header>
         <Search setJoke={setJoke}/>
         {(joke?<Joke size="medium" tmp={joke} add={wasLiked}/>:<></>)}
       </main>

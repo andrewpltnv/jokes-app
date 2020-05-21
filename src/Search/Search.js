@@ -6,12 +6,12 @@ import RadioBox from "./RadioBox";
    const [selected,select] = useState("random");
    const [category,setCategory] = useState("animal");
    const [input,setInput] = useState('');
-   const [categories,setCategories] = useState(["animal","career","celebrity","dev"]);
+   const [categories,setCategories] = useState([]);
    useEffect(() => {
      async function getArray(){
        await fetch("https://api.chucknorris.io/jokes/categories")
        .then(res => res.json())
-       .then(array => setCategories(array));
+       .then(array => setCategories(array.slice(0,6)));
      }
      getArray().then(array => console.log(array));
    },[]);
