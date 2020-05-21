@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("fonts/Roboto/Roboto-Bold.ttf") format("opentype");
+}
+h1{
+    font-family: Roboto Bold, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 44px;;
+}
+h2{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 44px;
+}
+h3{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+}
